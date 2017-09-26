@@ -1,16 +1,14 @@
 package com.styleus.backend.controller;
 
 import com.styleus.backend.models.User;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.jws.soap.SOAPBinding;
-import java.security.acl.LastOwnerException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 
 @RestController
@@ -33,9 +31,38 @@ public class UserServices {
                                  @RequestParam(value = "password") String password,
                                  @RequestParam(value = "privacity") Boolean privacity){
 
-        User usuario = new User(name,first_surname,date_of_birth,email,password,privacity);
+        User usuario = new User(name,first_surname,date_of_birth,true,email,password,privacity);
         Application.hmUser.put(new Long(usuario.getId()),usuario);
         return usuario;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String userLogin(@RequestParam(value="email") String email,
+                          @RequestParam(value = "password") String password){
+        boolean encontrado = false;
+        Integer contador =0;
+        ;
+
+        for (Map.Entry<Long, User> temporal: Application.hmUser.entrySet()){
+                 if(temporal.getValue().getEmail().equals(email) && temporal.getValue().getPassword().equals(password)) {
+                     encontrado = true;
+                     break;
+                 }
+                 else
+                     encontrado=false;
+                 contador++;
+
+        }
+
+        if(encontrado)
+            return "Entro";
+        else
+            return "Usuario incorrecto";
+
+
+
+
+
     }
 
 
