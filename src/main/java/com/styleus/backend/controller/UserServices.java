@@ -61,9 +61,27 @@ public class UserServices {
         else
             return "Usuario incorrecto";
 
+    }
+
+    @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
+    public String userLogin(@RequestParam(value="email") String email){
+        boolean encontrado = false;
 
 
+        for (Map.Entry<Long, User> temporal: StyleUsBackendMain.hmUser.entrySet()){
+            if(temporal.getValue().getEmail().equals(email)) {
+                encontrado = true;
+                break;
+            }
+            else
+                encontrado=false;
 
+        }
+
+        if(encontrado)
+            return "Su enlace a sido enviado a su correo, si esta"; //Para mandar el link para rrecuperar contraseña
+        else
+            return "Su enlace a sido enviado a su correo, no esta";//Para mandar el link a un nuevo usuario que no esta registrado
 
     }
 
