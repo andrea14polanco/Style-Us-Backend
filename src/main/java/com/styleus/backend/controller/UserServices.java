@@ -2,10 +2,7 @@ package com.styleus.backend.controller;
 
 import com.styleus.backend.StyleUsBackendMain;
 import com.styleus.backend.models.User;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -84,6 +81,24 @@ public class UserServices {
             return "Su enlace a sido enviado a su correo, no esta";//Para mandar el link a un nuevo usuario que no esta registrado
 
     }
+
+//    @RequestMapping(value="/newPassword", method = RequestMethod.PUT)  Methodo pendiente por continuar, incompleto
+//    public User updatePassword(@RequestBody String newPassword,
+//                                @RequestBody String confirmPassword) throws Exception{
+//
+//       User usuario =(User) StyleUsBackendMain.hmUser.entrySet();
+//        if(newPassword.equals(confirmPassword)) {
+//
+//            usuario.setPassword(newPassword);
+//            return usuario;
+//        }
+//        else {
+//            throw new Exception("la claves del Usuario " + usuario.getId() + " no son iguales");
+//        }
+//
+//
+//
+//    }
 
 
 
