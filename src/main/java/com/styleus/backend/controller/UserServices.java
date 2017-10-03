@@ -82,23 +82,27 @@ public class UserServices {
 
     }
 
-//    @RequestMapping(value="/newPassword", method = RequestMethod.PUT)  Methodo pendiente por continuar, incompleto
-//    public User updatePassword(@RequestBody String newPassword,
-//                                @RequestBody String confirmPassword) throws Exception{
-//
-//       User usuario =(User) StyleUsBackendMain.hmUser.entrySet();
-//        if(newPassword.equals(confirmPassword)) {
-//
-//            usuario.setPassword(newPassword);
-//            return usuario;
-//        }
-//        else {
-//            throw new Exception("la claves del Usuario " + usuario.getId() + " no son iguales");
-//        }
-//
-//
-//
-//    }
+    @RequestMapping(value="/newPassword", method = RequestMethod.PUT)
+    public String updatePassword2(@RequestParam(value="email") String email, @RequestParam(value="newPassword") String newPassword,
+                                  @RequestParam(value="confirmPassword") String confirmPassword){
+        for(Map.Entry<Long, User> temporal: StyleUsBackendMain.hmUser.entrySet()){
+            if(temporal.getValue().getEmail().equals(email)){
+                if(newPassword.equals(confirmPassword)){
+                    StyleUsBackendMain.hmUser.get(temporal.getKey()).setPassword(newPassword);
+                    return "Su clave fue actualizada";
+                }
+                else {
+                    return "Las claves no son iguales";
+                }
+            }
+            else
+                return "Este usuario no esta registrado";
+        }
+        return "Error";
+    }
+
+
+
 
 
 
