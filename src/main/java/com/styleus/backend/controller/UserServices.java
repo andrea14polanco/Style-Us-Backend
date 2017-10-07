@@ -61,7 +61,7 @@ public class UserServices {
     }
 
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
-    public String userLogin(@RequestParam(value="email") String email){
+    public String userLogin2(@RequestParam(value="email") String email){
         boolean encontrado = false;
 
 
@@ -81,6 +81,9 @@ public class UserServices {
             return "Su enlace a sido enviado a su correo, no esta";//Para mandar el link a un nuevo usuario que no esta registrado
 
     }
+
+
+
 
     @RequestMapping(value="/newPassword", method = RequestMethod.PUT)
     public String updatePassword2(@RequestParam(value="email") String email, @RequestParam(value="newPassword") String newPassword,
