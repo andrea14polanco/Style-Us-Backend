@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Style-Us-Backend.iml" filepath="$PROJECT_DIR$/.idea/modules/Style-Us-Backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/StyleUsBackend.iml" filepath="$PROJECT_DIR$/StyleUsBackend.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/StyleUsBackend_main.iml" filepath="$PROJECT_DIR$/.idea/modules/StyleUsBackend_main.iml" group="StyleUsBackend" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/StyleUsBackend_test.iml" filepath="$PROJECT_DIR$/.idea/modules/StyleUsBackend_test.iml" group="StyleUsBackend" />
