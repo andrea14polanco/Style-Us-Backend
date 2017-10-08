@@ -19,9 +19,15 @@ public class UserServices {
         return StyleUsBackendMain.hmUser;
     }
 
+    @RequestMapping(value = "/getUser", method = RequestMethod.POST)
+    public User getAnUser(@RequestParam(value="id") Long id){
+        User usuario = StyleUsBackendMain.hmUser.get(id);
+        return usuario;
+    }
 
     @RequestMapping(value="/registration",method = RequestMethod.POST)
-    public User userRegistration(@RequestParam(value="name") String name,
+    public User userRegistration(@RequestParam(value="id") Long id,
+                                 @RequestParam(value="name") String name,
                                  @RequestParam(value = "first_surname") String first_surname,
                                  //@RequestParam(value = "date_of_birth") Date date_of_birth,
                                  @RequestParam(value = "gender") Boolean gender,
@@ -29,7 +35,7 @@ public class UserServices {
                                  @RequestParam(value = "password") String password,
                                  @RequestParam(value = "privacity") Boolean privacity){
 
-        User usuario = new User(name,first_surname,/*date_of_birth,*/gender,email,password,privacity);
+        User usuario = new User(id,name,first_surname,/*date_of_birth,*/gender,email,password,privacity);
         StyleUsBackendMain.hmUser.put(new Long(usuario.getId()),usuario);
         //Application.hmUser.put(new Long(usuario.getId()),usuario);
         return usuario;
@@ -104,6 +110,16 @@ public class UserServices {
         return "Error";
     }
 
+
+
+    /*
+    return [
+    'id' => '1',
+    'name' => 'Juana'
+
+    ]
+
+     */
 
 
 
