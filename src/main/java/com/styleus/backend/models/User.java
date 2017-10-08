@@ -28,9 +28,9 @@ public class User {
 
     }
 
-    public User(String name, String first_surname/*,Date date_of_birth*/, boolean gender, String email, String password, Boolean privacity){
+    public User(Long id, String name, String first_surname/*,Date date_of_birth*/, boolean gender, String email, String password, Boolean privacity){
 
-        this.id = (new Date()).getTime();
+        this.id = id;//(new Date()).getTime();
         this.name=name;
         this.first_surname=first_surname;
         //this.date_of_birth=date_of_birth;
