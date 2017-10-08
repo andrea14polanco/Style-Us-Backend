@@ -1,6 +1,6 @@
 package com.styleus.backend;
 
-//import com.styleus.backend.models.Post;
+import com.styleus.backend.models.Post;
 import com.styleus.backend.models.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,12 +14,12 @@ import java.util.HashMap;
 public class StyleUsBackendMain  extends SpringBootServletInitializer{
 
     public static HashMap<Long, User> hmUser;
-    //public static HashMap<Long, Post> hmPost;
+    public static HashMap<Long, Post> hmPost;
 
     public static void main(String[] args) {
 
         hmUser = new HashMap<Long, User>();
-        //hmPost = new HashMap<Long, Post>();
+        hmPost = new HashMap<Long, Post>();
 
 
         SimpleDateFormat sdf = new SimpleDateFormat();
@@ -31,8 +31,8 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
         User dos = new User((long)2,"dos","Oviedo",true, "adeury@gmail.com","12345",false);
         hmUser.put(dos.getId(),dos);
 
-        //Post post1 = new Post(1,"Este es el cuerpo del post",5,0,"C:\\Users\\Adeury\\IdeaProjects\\Style-Us-Backend\\img\\imagen1",uno.getId(),1,1);
-        //hmPost.put(post1.getId(),post1);
+        Post post1 = new Post(1,"Este es el cuerpo del post",5,0,"C:\\Users\\Adeury\\IdeaProjects\\Style-Us-Backend\\img\\imagen1",uno.getId(),1,1);
+        hmPost.put(post1.getId(),post1);
 
         SpringApplication.run(StyleUsBackendMain.class, args);
     }
