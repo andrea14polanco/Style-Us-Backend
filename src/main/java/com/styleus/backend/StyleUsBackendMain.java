@@ -1,6 +1,7 @@
 package com.styleus.backend;
 
 import com.styleus.backend.models.Post;
+import com.styleus.backend.models.Like;
 import com.styleus.backend.models.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,11 +16,13 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
 
     public static HashMap<Long, User> hmUser;
     public static HashMap<Long, Post> hmPost;
+    public static HashMap<Long, Like> hmLike;
 
     public static void main(String[] args) {
 
         hmUser = new HashMap<Long, User>();
         hmPost = new HashMap<Long, Post>();
+        hmLike = new HashMap<Long, Like>();
 
 
         SimpleDateFormat sdf = new SimpleDateFormat();

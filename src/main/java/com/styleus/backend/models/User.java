@@ -24,9 +24,7 @@ public class User {
     private Date deleted_at;
     private Boolean gender; //0 mujer y 1 hombre
 
-    public User(){
 
-    }
 
     public User(Long id, String name, String first_surname/*,Date date_of_birth*/, boolean gender, String email, String password, Boolean privacity){
 

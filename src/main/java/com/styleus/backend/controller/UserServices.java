@@ -15,9 +15,7 @@ public class UserServices {
 
 
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public HashMap<Long,User> getAllUsers(){
-        return StyleUsBackendMain.hmUser;
-    }
+    public HashMap<Long,User> getAllUsers(){ return StyleUsBackendMain.hmUser; }
 
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     public User getAnUser(@RequestParam(value="id") Long id){
