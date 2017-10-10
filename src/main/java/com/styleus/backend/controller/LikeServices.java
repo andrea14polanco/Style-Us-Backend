@@ -1,11 +1,10 @@
-package com.styleus.backend.controller.dao;
+package com.styleus.backend.controller;
+
 
 import com.styleus.backend.StyleUsBackendMain;
 import com.styleus.backend.models.Like;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.styleus.backend.models.Post;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.Map;
@@ -15,7 +14,7 @@ import java.util.Map;
 
 public class LikeServices {
 
-    @RequestMapping(value="/like", method = RequestMethod.POST)
+    @RequestMapping(value="/addLike", method = RequestMethod.POST)
 
     public Like mostrarLike(@RequestParam(value = "id") Long id,
                             @RequestParam(value = "actionstate_id" ) Long actionstate_id,
@@ -42,20 +41,20 @@ public class LikeServices {
         return contador;
     }
 
-    @RequestMapping(value="/quitarLike", method = RequestMethod.POST)
-    public Like quitarLike(@RequestParam(value = "posts_id") Long posts_id){
 
-        Like borrado=null;
-        for(Map.Entry<Long,Like>temporal: StyleUsBackendMain.hmLike.entrySet()){
+    @RequestMapping(value="/quitarLike/{id}", method = RequestMethod.DELETE)
+    public Like quitarLike(@PathVariable int id) throws Exception{
 
-            if(temporal.getValue().getPosts_id().equals(posts_id)){
-                borrado=temporal.getValue();
-                StyleUsBackendMain.hmLike.remove(temporal.getKey());
-
-
-            }
+        Like borrado;
+        if(StyleUsBackendMain.hmLike.containsKey(new Long(id))){
+            borrado=(Like) StyleUsBackendMain.hmLike.get(new Long(id));
+            StyleUsBackendMain.hmLike.remove(new Long(id));
         }
+        else
+            throw new Exception("Like "+id+" no encontrado");
+
         return borrado;
     }
-}
 
+
+}
