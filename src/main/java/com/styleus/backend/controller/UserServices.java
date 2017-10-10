@@ -1,10 +1,10 @@
 package com.styleus.backend.controller;
 
 import com.styleus.backend.StyleUsBackendMain;
+//import com.styleus.backend.models.Like;
 import com.styleus.backend.models.User;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -107,19 +107,6 @@ public class UserServices {
         }
         return "Error";
     }
-
-
-
-    /*
-    return [
-    'id' => '1',
-    'name' => 'Juana'
-
-    ]
-
-     */
-
-
 
 
 

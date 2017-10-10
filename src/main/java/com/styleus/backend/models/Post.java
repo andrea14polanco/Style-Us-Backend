@@ -29,6 +29,7 @@ public class Post {
         this.clothe_id = Long.valueOf(clothe_id);
     }
 
+
     public Long getId() {
         return id;
     }
