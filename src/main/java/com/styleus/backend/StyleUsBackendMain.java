@@ -17,6 +17,7 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
     public static HashMap<Long, Like> hmLike;
     public static HashMap<Long, Comments> hmComments;
     public static HashMap<Long, ActionStates> hmActionStates;
+    public static HashMap<Long, Followers> hmFollowers;
 
     public static void main(String[] args) {
 
@@ -25,6 +26,7 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
         hmLike = new HashMap<Long, Like>();
         hmComments = new HashMap<Long, Comments>();
         hmActionStates = new HashMap<Long, ActionStates>();
+        hmFollowers = new HashMap<Long, Followers>();
 
 
 
