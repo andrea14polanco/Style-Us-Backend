@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class ActionStatesServices {
 
-        @RequestMapping(value = "/Action", method = RequestMethod.POST)
+        @RequestMapping(value = "/Action", method = RequestMethod.GET)
         public String accion(@RequestParam(value = "id") int id, //este es el id de la accion a recivir, actualmente solo hay 2
                              @RequestParam (value = "name") String name) throws Exception{
             String accion = "";

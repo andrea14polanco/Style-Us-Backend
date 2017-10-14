@@ -27,7 +27,7 @@ public class LikeServices {
         return probando;
     }
 
-    @RequestMapping(value="/cantidadLike", method = RequestMethod.POST)
+    @RequestMapping(value="/cantidadLike", method = RequestMethod.GET)
     public int cantidadLike(@RequestParam(value = "posts_id") Long posts_id){
 
         int contador = 0;

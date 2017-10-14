@@ -24,7 +24,7 @@ public class FollowerServices {
         return probando;
     }
 
-    @RequestMapping(value="/cantidadFollowers", method = RequestMethod.POST)
+    @RequestMapping(value="/cantidadFollowers", method = RequestMethod.GET)
     public int cantidadFollowes(@RequestParam(value = "users_id") Long users_id){
 
         int contador = 0;

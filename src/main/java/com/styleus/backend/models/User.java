@@ -22,7 +22,7 @@ public class User {
     private Date created_at;
     private Date updated_at;
     private Date deleted_at;
-    private Boolean gender; //0 mujer y 1 hombre
+    private Boolean gender; //0 mujer y 1 hombre4
 
 
 

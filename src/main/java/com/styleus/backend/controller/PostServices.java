@@ -17,7 +17,7 @@ public class PostServices {
         return StyleUsBackendMain.hmPost;
     }
 
-    @RequestMapping(value="/postUsuario", method = RequestMethod.POST)
+    @RequestMapping(value="/postUsuario", method = RequestMethod.GET)
     public Post mostrarUltimoPost(@RequestParam(value="email")String email){
         Post publicacion=null;
         User usuario = null;
@@ -60,7 +60,7 @@ public class PostServices {
     }
 
 
-    @RequestMapping(value = "/deletePost/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deletePost/{id}", method = RequestMethod.GET)
     public Post agregarPost(@PathVariable int id)throws Exception{
         Post postEliminado;
          if(StyleUsBackendMain.hmPost.containsKey(new Long(id))){

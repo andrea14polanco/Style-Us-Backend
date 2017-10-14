@@ -15,6 +15,8 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
     public static HashMap<Long, User> hmUser;
     public static HashMap<Long, Post> hmPost;
     public static HashMap<Long, Like> hmLike;
+    public static HashMap<Long, Pieces> hmPieces;
+    public static HashMap<Long, Clothes> hmClothes;
     public static HashMap<Long, Comments> hmComments;
     public static HashMap<Long, ActionStates> hmActionStates;
     public static HashMap<Long, Followers> hmFollowers;
@@ -24,9 +26,12 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
         hmUser = new HashMap<Long, User>();
         hmPost = new HashMap<Long, Post>();
         hmLike = new HashMap<Long, Like>();
+        hmPieces = new HashMap<Long, Pieces>();
+        hmClothes = new HashMap<Long, Clothes>();
         hmComments = new HashMap<Long, Comments>();
         hmActionStates = new HashMap<Long, ActionStates>();
         hmFollowers = new HashMap<Long, Followers>();
+
 
 
 

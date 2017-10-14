@@ -17,7 +17,7 @@ public class UserServices {
     @RequestMapping(value="/",method = RequestMethod.GET)
     public HashMap<Long,User> getAllUsers(){ return StyleUsBackendMain.hmUser; }
 
-    @RequestMapping(value = "/getUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
     public User getAnUser(@RequestParam(value="id") Long id){
         User usuario = StyleUsBackendMain.hmUser.get(id);
         return usuario;
@@ -39,7 +39,7 @@ public class UserServices {
         return usuario;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String userLogin(@RequestParam(value="email") String email,
                           @RequestParam(value = "password") String password){
         boolean encontrado = false;
@@ -64,7 +64,7 @@ public class UserServices {
 
     }
 
-    @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
+    @RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
     public String userLogin2(@RequestParam(value="email") String email){
         boolean encontrado = false;
 

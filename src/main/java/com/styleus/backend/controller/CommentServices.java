@@ -32,7 +32,7 @@ public class CommentServices {
 
     }
 
-    @RequestMapping(value = "/Comment", method = RequestMethod.POST)
+    @RequestMapping(value = "/Comment", method = RequestMethod.GET)
     public Comments buscarComentario(@RequestParam(value = "id") int id) throws Exception{
         
         boolean encontro = false;
@@ -58,13 +58,11 @@ public class CommentServices {
 
     }
 
-    @RequestMapping(value = "/allCommentToPostId", method = RequestMethod.POST)
+    @RequestMapping(value = "/allCommentToPostId", method = RequestMethod.GET)
     public HashMap <Long, Comments> todosLosComentarios(@RequestParam(value = "post_id") int post_id) throws Exception{
 
         boolean encontro = false;
         HashMap <Long, Comments> comentarios = new HashMap<Long, Comments>();
-
-
 
 
         for(Map.Entry<Long,Comments> temporal : StyleUsBackendMain.hmComments.entrySet()){
@@ -81,7 +79,7 @@ public class CommentServices {
 
     }
 
-    @RequestMapping(value = "/countCommentToPostId", method = RequestMethod.POST)
+    @RequestMapping(value = "/countCommentToPostId", method = RequestMethod.GET)
     public long contarComentarios(@RequestParam(value = "post_id") int post_id) throws Exception{
 
         boolean encontro = false;
