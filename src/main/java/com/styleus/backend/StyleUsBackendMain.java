@@ -20,6 +20,7 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
     public static HashMap<Long, Comments> hmComments;
     public static HashMap<Long, ActionStates> hmActionStates;
     public static HashMap<Long, Followers> hmFollowers;
+    public static HashMap<String, Tags> hmTags;
 
     public static void main(String[] args) {
 
@@ -31,6 +32,7 @@ public class StyleUsBackendMain  extends SpringBootServletInitializer{
         hmComments = new HashMap<Long, Comments>();
         hmActionStates = new HashMap<Long, ActionStates>();
         hmFollowers = new HashMap<Long, Followers>();
+        hmTags = new HashMap<String, Tags>();
 
 
 
