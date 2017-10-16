@@ -31,7 +31,7 @@ public class TagServices {
             return StyleUsBackendMain.hmTags.get(name);
         }
         else {
-            return agregarTags(4,name,null);
+            throw new Exception("El tag "+name+" no esta registrado");
         }
     }
 }
