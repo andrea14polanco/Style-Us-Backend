@@ -1,4 +1,4 @@
-package com.styleus.backend.controller.dao;
+package com.styleus.backend.controller;
 
 import com.styleus.backend.StyleUsBackendMain;
 import com.styleus.backend.models.Tags;
